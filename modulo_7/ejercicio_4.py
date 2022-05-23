@@ -27,12 +27,11 @@ class BST:
     def insert(self, element):
         self._insert_recursive(self.root, element)
 
-    def dri_string(self, node):
-        if node.right is not None:
-            self.dri_string(node.right)
-        print(node.element)
-        if node.left is not None:
-            self.dri_string(node.left)
+    def print_dri(self, node, depth=0):
+        if node is not None:
+            self.print_dri(node.right, depth+1)
+            print('\t'*depth+str(node.element))
+            self.print_dri(node.left, depth+1)
 
 
 if __name__ == '__main__':
@@ -43,5 +42,7 @@ if __name__ == '__main__':
         bst = BST()
         for number in numbers:
             bst.insert(number)
-        bst.dri_string(bst.root)
+        bst.print_dri(bst.root)
         print()
+
+        # 8 12 14 15 13 10 11 9 4 6 7 5 2 3 1 -1
