@@ -41,7 +41,7 @@ if __name__ == '__main__':
         numbers.pop()
         bst = BST()
         for number in numbers:
-            bst.insert(number)
+            bst.insert(int(number))
         bst.print_dri(bst.root)
         print()
 
