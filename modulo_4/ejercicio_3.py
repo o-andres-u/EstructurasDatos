@@ -8,17 +8,12 @@ line = input()
 dq = deque()
 while line != '#':
     if line == 'inviertete':
-        length = len(dq)
-        temp = [0] * length
-        counter = 0
-        for i in range(length):
-            temp[counter] = dq.pop()
-            counter += 1
-        dq = deque(temp)
+        dq.appendleft(int(input()))
     else:
-        number = int(line)
-        dq.append(number)
+        dq.append(int(line))
     line = input()
 
-for i in range(len(dq)):
-    print(dq.popleft(), end='')
+print(dq)
+
+#for i in range(len(dq)):
+#    print(dq.popleft(), end='')
